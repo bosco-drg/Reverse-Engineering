@@ -1,6 +1,8 @@
 # 🔬 USB Hacking – Aaronia BPSG 6 Signal Generator
 
-![Aaronia BPSG 6](docs/img/generator_aaronia.png)
+<p align="center">
+  <img src="docs/img/generator_aaronia.png" alt="Aaronia BPSG 6" />
+</p>
 
 Ce projet vise à rétroconcevoir le protocole de communication USB utilisé par le générateur de signaux RF Aaronia BPSG 6. Le fabricant ne fournit aucune documentation API, et le logiciel officiel n'est disponible que pour les plateformes x86 avec une interface graphique, ce qui le rend inutilisable sur des systèmes sans écran comme le Raspberry Pi.  
 Notre objectif est de créer un outil open-source en ligne de commande (Python) pour contrôler les fonctions de base du générateur (fréquence, puissance de sortie) via USB, le rendant ainsi accessible pour des applications embarquées ou à distance.
