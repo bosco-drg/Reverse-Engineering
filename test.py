@@ -4,21 +4,34 @@
 
 CONFIG = {
     "f_ref_hz": 40e6,
-    "modulus": 400,            # M pour F/M
-    "cp_current": 0b1111,       # 5.12 mA (RSET typique)
-    "r_counter": 1,            # f_ref en MHz → R = 10
+    "modulus": 400,
+    "cp_current": 0b1111,
+    "r_counter": 1,
 
-    "band_select_div": 0x10,    # BS ~50kHz
-    "ld_mode": 0b01,            # 01 = digital
+    "band_select_div": 0x382,
+    "ld_mode": 0b01,
     "mux_msb": 0,
     "mux_lsb": 0b110,
 
-    "reg3_default": 0x00000013,  # CDM off, VCO auto
-    "reg5_default": 0x00040000,  # valeur par défaut pour reg5
+    "reg3_default": 0x00000013,
+    "reg5_default": 0x00040000,
+
+    "output_enable": True,
+    "fundamental": False,
+    "mute_till_lock": False,
+    "powerdown": False,
+    "ref_divider": False,
+    "ref_doubler": False,
+
     "rf_power": {
-        "APWR": 0b11, "BPWR": 0b11, "RFA_EN": 1, "RFB_EN": 1
+        "APWR": 0b11,
+        "BPWR": 0b11,
+        "RFA_EN": 1,
+        "RFB_EN": 1
     }
 }
+
+
 
 # ============================
 # GÉNÉRATION DES REGISTRES SPI
@@ -30,39 +43,42 @@ def reg0(int_n, N, F):
 def reg1(M, CPOC=1, CPL=0b01, P=0):
     return (CPOC << 31) | ((CPL & 0x03) << 29) | ((P & 0xFFF) << 15) | ((M & 0xFFF) << 3) | 0b001
 
-def reg2(R, CP, LDF=1, LDP=0, PDP=1, SHDN=0, TRI=0, RST=0, SDN=0b00, LDS=1, DBR=0, RDIV2=0):
+def reg2(R, CP, LDF=1):
+    cfg = CONFIG
     reg = 0
-    reg |= (LDS & 0x1) << 31
-    reg |= (SDN & 0x3) << 29
-    reg |= CONFIG["mux_lsb"] << 26
-    reg |= (DBR & 0x1) << 25
-    reg |= (RDIV2 & 0x1) << 24
+    reg |= 1 << 31  # LDS (lock detect speed = rapide)
+    reg |= 0 << 29  # SDN = 00 → normal mode
+    reg |= cfg["mux_lsb"] << 26
+    reg |= int(cfg["ref_doubler"]) << 25  # DBR
+    reg |= int(cfg["ref_divider"]) << 24  # RDIV2
     reg |= (R & 0x3FF) << 14
     reg |= 1 << 13  # REG4DB
     reg |= (CP & 0xF) << 9
-    reg |= (LDF & 0x1) << 8
-    reg |= (LDP & 0x1) << 7
-    reg |= (PDP & 0x1) << 6
-    reg |= (SHDN & 0x1) << 5
-    reg |= (TRI & 0x1) << 4
-    reg |= (RST & 0x1) << 3
+    reg |= LDF << 8
+    reg |= 0 << 7   # LDP
+    reg |= 1 << 6   # PDP (positive)
+    reg |= int(cfg["powerdown"]) << 5     # SHDN
+    reg |= int(cfg["mute_till_lock"]) << 4  # TRI
+    reg |= 0 << 3   # RST
     reg |= 0b010
     return reg
+
 
 def reg3():
     return CONFIG["reg3_default"]
 
 def reg4(DIVA):
-    pwr = CONFIG["rf_power"]
+    cfg = CONFIG
+    pwr = cfg["rf_power"]
     reg = 0
     reg |= 0b011000 << 26
-    reg |= 0 << 23  # FB
+    reg |= int(not cfg["fundamental"]) << 23  # FB = 1 → bypass output divider
     reg |= (DIVA & 0x7) << 20
-    reg |= (CONFIG["band_select_div"] & 0xFF) << 12
-    reg |= 0 << 9  # BDIV
-    reg |= (pwr["RFB_EN"] & 0x1) << 8
+    reg |= (cfg["band_select_div"] & 0xFF) << 12
+    reg |= 0 << 9  # BDIV = 0
+    reg |= int(cfg["output_enable"] and pwr["RFB_EN"]) << 8
     reg |= (pwr["BPWR"] & 0x3) << 6
-    reg |= (pwr["RFA_EN"] & 0x1) << 5
+    reg |= int(cfg["output_enable"] and pwr["RFA_EN"]) << 5
     reg |= (pwr["APWR"] & 0x3) << 3
     reg |= 0b100
     return reg
