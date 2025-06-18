@@ -18,12 +18,7 @@ def desinverser_trames(lines):
 
 # Exemple d'entrée
 entree = """
-00 00 fa 00
-11 80 00 80 
-42 6e 00 19 
-b3 04 00 e8 
-fc 04 89 61
-05 00 40 00 
+08 01 00 00
 """.strip().split('\n')
 
 # Appel de la fonction
