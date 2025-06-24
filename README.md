@@ -6,7 +6,7 @@
   "repo": "https://github.com/bosco-drg/Reverse-Engineering",
   "images": [
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia.png",
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia2.png"
+    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia.png"
   ],
   "tags": ["python", "iot", "hardware"],
   "title_fr": "Super Projet",
@@ -27,7 +27,7 @@
     },
     {
       "type": "image",
-      "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia2.png",
+      "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia.png",
       "caption_i18n": "project_superproject_img_caption2"
     }
   ]
