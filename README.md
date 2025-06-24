@@ -30,8 +30,8 @@
   "img_caption3_en": "Third image, results visualization.",
   "img_caption4_fr": "Quatrième image, schéma SVG du système.",
   "img_caption4_en": "Fourth image, SVG diagram of the system.",
-  "long_text_fr": "Voici un très long texte en français. ".repeat(50) + "Fin du texte.",
-  "long_text_en": "Here is a very long text in English. ".repeat(50) + "End of text.",
+  "long_text_fr": "Voici un très long texte en français. ",
+  "long_text_en": "Here is a very long text in English. ",
   "sections": [
     {
       "type": "text",
