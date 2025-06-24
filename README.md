@@ -5,8 +5,8 @@
   "id": "superproject",
   "repo": "https://github.com/bosco-drg/Reverse-Engineering",
   "images": [
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png"
+    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia.png",
+    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia2.png"
   ],
   "tags": ["python", "iot", "hardware"],
   "title_fr": "Super Projet",
@@ -14,10 +14,25 @@
   "short_desc_fr": "Un projet innovant pour le portfolio.",
   "short_desc_en": "An innovative project for the portfolio.",
   "desc_fr": "Ce projet démontre l'intégration de matériel et de logiciel pour une solution IoT complète.",
-  "desc_en": "This project demonstrates the integration of hardware and software for a complete IoT solution."
+  "desc_en": "This project demonstrates the integration of hardware and software for a complete IoT solution.",
+  "sections": [
+    {
+      "type": "text",
+      "value": ["project_superproject_desc"]
+    },
+    {
+      "type": "image",
+      "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia.png",
+      "caption_i18n": "project_superproject_img_caption1"
+    },
+    {
+      "type": "image",
+      "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia2.png",
+      "caption_i18n": "project_superproject_img_caption2"
+    }
+  ]
 }
 -->
-
 <p align="center">
   <img src="docs/img/generator_aaronia.png" alt="Aaronia BPSG 6" />
 </p>
