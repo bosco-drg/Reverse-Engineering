@@ -1,10 +1,5 @@
 # 🔬 USB Hacking – Aaronia BPSG 6 Signal Generator
 
-# Projet Ultra Complet
-
-Bienvenue sur le projet ultra complet, conçu pour tester toutes les fonctionnalités de l'import automatique de portfolio.  
-Ce projet couvre : images multiples, captions multilingues, sections variées, liens, listes, code, tableaux, et bien plus.
-
 <!--portfolio
 {
   "id": "ultracomplet",
