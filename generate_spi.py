@@ -119,7 +119,7 @@ def generate_spi_registers(f_out_hz, int_n=False):
     return [reg_to_hex(r) for r in regs]
 
 if __name__ == "__main__":
-    f_out_mhz = 5904.1
+    f_out_mhz = 2000
     regs = generate_spi_registers(f_out_hz=f_out_mhz * 1e6, int_n=False)
     for i, hexval in enumerate(regs):
         print(f"Reg{i}: {hexval}")
