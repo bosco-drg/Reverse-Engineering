@@ -67,13 +67,6 @@
       ]
     },
     {
-      "type": "code",
-      "language": "python",
-      "value": [
-        "project_ultracomplet_code"
-      ]
-    },
-    {
       "type": "table",
       "headers": [
         "project_ultracomplet_table_header1",
