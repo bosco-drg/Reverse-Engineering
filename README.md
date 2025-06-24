@@ -24,45 +24,33 @@ Bienvenue sur le projet ultra complet, conçu pour tester toutes les fonctionnal
   "short_desc_en": "An exhaustive test project to explore all import script possibilities.",
   "desc_fr": "Ce projet ultra complet démontre l'intégration de toutes les fonctionnalités prévues pour le portfolio automatisé. Il inclut des images, des sections variées, des liens, des listes, du code, des tableaux, et des captions multilingues. Il permet de valider la robustesse du script sur de grands volumes de données et de textes.",
   "desc_en": "This ultra complete project demonstrates the integration of all features planned for the automated portfolio. It includes images, various sections, links, lists, code, tables, and multilingual captions. It validates the script's robustness on large volumes of data and text.",
-  "img_caption_fr": "Image illustrative du projet ultra complet.",
-  "img_caption_en": "Illustrative image of the ultra complete project.",
-  "img_caption1_fr": "Première image du projet, montrant l'interface principale.",
-  "img_caption1_en": "First project image, showing the main interface.",
-  "img_caption2_fr": "Deuxième image, démonstration de la fonctionnalité avancée.",
-  "img_caption2_en": "Second image, advanced feature demonstration.",
-  "img_caption3_fr": "Troisième image, visualisation des résultats.",
-  "img_caption3_en": "Third image, results visualization.",
-  "img_caption4_fr": "Quatrième image, schéma SVG du système.",
-  "img_caption4_en": "Fourth image, SVG diagram of the system.",
-  "long_text_fr": "Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Fin du texte.",
-  "long_text_en": "Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. End of text.",
   "sections": [
     {
       "type": "text",
       "value": [
         "project_ultracomplet_desc",
-        "long_text_fr"
+        "project_ultracomplet_long_text"
       ]
     },
     {
       "type": "image",
       "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-      "caption_i18n": "img_caption1_fr"
+      "caption_i18n": "project_ultracomplet_img_caption1"
     },
     {
       "type": "image",
       "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-      "caption_i18n": "img_caption2_fr"
+      "caption_i18n": "project_ultracomplet_img_caption2"
     },
     {
       "type": "image",
       "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-      "caption_i18n": "img_caption3_fr"
+      "caption_i18n": "project_ultracomplet_img_caption3"
     },
     {
       "type": "image",
       "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-      "caption_i18n": "img_caption4_fr"
+      "caption_i18n": "project_ultracomplet_img_caption4"
     },
     {
       "type": "hr"
@@ -70,40 +58,48 @@ Bienvenue sur le projet ultra complet, conçu pour tester toutes les fonctionnal
     {
       "type": "text",
       "value": [
-        "Voici une section supplémentaire pour tester l'empilement de textes.",
-        "On peut ajouter plusieurs paragraphes ici.",
-        "Liste des fonctionnalités :",
-        "- Import automatique",
-        "- Gestion multilingue",
-        "- Téléchargement d'images",
-        "- Sections variées (texte, image, lien, code, tableau, hr)",
-        "- Robustesse sur de gros volumes"
+        "project_ultracomplet_features_intro",
+        "project_ultracomplet_features_list"
       ]
     },
     {
       "type": "list",
       "items": [
-        "Premier point de la liste",
-        "Deuxième point",
-        "Troisième point"
+        "project_ultracomplet_list_item1",
+        "project_ultracomplet_list_item2",
+        "project_ultracomplet_list_item3"
       ]
     },
     {
       "type": "code",
       "language": "python",
       "value": [
-        "def hello_world():",
-        "    print('Hello, world!')"
+        "project_ultracomplet_code"
       ]
     },
     {
       "type": "table",
-      "headers": ["Fonctionnalité", "Statut"],
+      "headers": [
+        "project_ultracomplet_table_header1",
+        "project_ultracomplet_table_header2"
+      ],
       "rows": [
-        ["Import README", "OK"],
-        ["Téléchargement images", "OK"],
-        ["Traductions", "OK"],
-        ["Sections complexes", "OK"]
+        [
+          "project_ultracomplet_table_row1col1",
+          "project_ultracomplet_table_row1col2"
+        ],
+        [
+          "project_ultracomplet_table_row2col1",
+          "project_ultracomplet_table_row2col2"
+        ],
+        [
+          "project_ultracomplet_table_row3col1",
+          "project_ultracomplet_table_row3col2"
+        ],
+        [
+          "project_ultracomplet_table_row4col1",
+          "project_ultracomplet_table_row4col2"
+        ]
       ]
     },
     {
@@ -118,12 +114,13 @@ Bienvenue sur le projet ultra complet, conçu pour tester toutes les fonctionnal
     {
       "type": "text",
       "value": [
-        "Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. "
+        "project_ultracomplet_long_text2"
       ]
     }
   ]
 }
 -->
+
 
 
 <p align="center">
