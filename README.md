@@ -8,7 +8,7 @@
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia.png",
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/generator_aaronia.png"
   ],
-  "tags": ["python", "iot", "hardware"],
+  "tags": ["tag_maintenance", "tag_maintenance", "tag_maintenance"],
   "title_fr": "Super Projet",
   "title_en": "Super Project",
   "short_desc_fr": "Un projet innovant pour le portfolio.",
@@ -33,6 +33,7 @@
   ]
 }
 -->
+
 <p align="center">
   <img src="docs/img/generator_aaronia.png" alt="Aaronia BPSG 6" />
 </p>
