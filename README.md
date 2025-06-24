@@ -1,9 +1,5 @@
 # 🔬 USB Hacking – Aaronia BPSG 6 Signal Generator
 
-# Mon super projet
-
-Description générale du projet...
-
 <!--portfolio
 {
   "id": "superproject",
