@@ -3,10 +3,10 @@
 <!--portfolio
 {
   "id": "superproject",
-  "repo": "https://github.com/bosco-drg/superproject",
+  "repo": "https://github.com/bosco-drg/Reverse-Engineering",
   "images": [
-    "https://raw.githubusercontent.com/bosco-drg/superproject/main/demo1.png",
-    "https://raw.githubusercontent.com/bosco-drg/superproject/main/demo2.jpg"
+    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
+    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png"
   ],
   "tags": ["python", "iot", "hardware"],
   "title_fr": "Super Projet",
