@@ -1,5 +1,27 @@
 # 🔬 USB Hacking – Aaronia BPSG 6 Signal Generator
 
+# Mon super projet
+
+Description générale du projet...
+
+<!--portfolio
+{
+  "id": "superproject",
+  "repo": "https://github.com/bosco-drg/superproject",
+  "images": [
+    "https://raw.githubusercontent.com/bosco-drg/superproject/main/demo1.png",
+    "https://raw.githubusercontent.com/bosco-drg/superproject/main/demo2.jpg"
+  ],
+  "tags": ["python", "iot", "hardware"],
+  "title_fr": "Super Projet",
+  "title_en": "Super Project",
+  "short_desc_fr": "Un projet innovant pour le portfolio.",
+  "short_desc_en": "An innovative project for the portfolio.",
+  "desc_fr": "Ce projet démontre l'intégration de matériel et de logiciel pour une solution IoT complète.",
+  "desc_en": "This project demonstrates the integration of hardware and software for a complete IoT solution."
+}
+-->
+
 <p align="center">
   <img src="docs/img/generator_aaronia.png" alt="Aaronia BPSG 6" />
 </p>
