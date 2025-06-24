@@ -7,7 +7,7 @@
   "date": "2024-07-01",
   "images": [
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
+    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",.re
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png"
   ],
@@ -114,7 +114,7 @@
     {
       "type": "text",
       "value": [
-        "Encore un peu de texte pour tester la longueur du contenu. ".repeat(20)
+        "Encore un peu de texte pour tester la longueur du contenu. "
       ]
     }
   ]
