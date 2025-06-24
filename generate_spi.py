@@ -1,7 +1,3 @@
-# ============================
-# CONFIGURATION DU SYSTÈME
-# ============================
-
 CONFIG = {
     "f_ref_hz": 40e6,
     "modulus": 400,
@@ -31,12 +27,6 @@ CONFIG = {
     }
 }
 
-
-
-# ============================
-# GÉNÉRATION DES REGISTRES SPI
-# ============================
-
 def reg0(int_n, N, F):
     return (int(int_n) << 31) | ((N & 0xFFFF) << 15) | ((F & 0xFFF) << 3) | 0b000
 
@@ -46,20 +36,20 @@ def reg1(M, CPOC=1, CPL=0b01, P=0):
 def reg2(R, CP, LDF=1):
     cfg = CONFIG
     reg = 0
-    reg |= 1 << 31  # LDS (lock detect speed = rapide)
-    reg |= 0 << 29  # SDN = 00 → normal mode
+    reg |= 1 << 31
+    reg |= 0 << 29
     reg |= cfg["mux_lsb"] << 26
-    reg |= int(cfg["ref_doubler"]) << 25  # DBR
-    reg |= int(cfg["ref_divider"]) << 24  # RDIV2
+    reg |= int(cfg["ref_doubler"]) << 25
+    reg |= int(cfg["ref_divider"]) << 24
     reg |= (R & 0x3FF) << 14
-    reg |= 1 << 13  # REG4DB
+    reg |= 1 << 13
     reg |= (CP & 0xF) << 9
     reg |= LDF << 8
-    reg |= 0 << 7   # LDP
-    reg |= 1 << 6   # PDP (positive)
-    reg |= int(cfg["powerdown"]) << 5     # SHDN
-    reg |= int(cfg["mute_till_lock"]) << 4  # TRI
-    reg |= 0 << 3   # RST
+    reg |= 0 << 7
+    reg |= 1 << 6
+    reg |= int(cfg["powerdown"]) << 5
+    reg |= int(cfg["mute_till_lock"]) << 4
+    reg |= 0 << 3
     reg |= 0b010
     return reg
 
@@ -72,10 +62,10 @@ def reg4(DIVA):
     pwr = cfg["rf_power"]
     reg = 0
     reg |= 0b011000 << 26
-    reg |= int(not cfg["fundamental"]) << 23  # FB = 1 → bypass output divider
+    reg |= int(not cfg["fundamental"]) << 23
     reg |= (DIVA & 0x7) << 20
     reg |= (cfg["band_select_div"] & 0xFF) << 12
-    reg |= 0 << 9  # BDIV = 0
+    reg |= 0 << 9
     reg |= int(cfg["output_enable"] and pwr["RFB_EN"]) << 8
     reg |= (pwr["BPWR"] & 0x3) << 6
     reg |= int(cfg["output_enable"] and pwr["RFA_EN"]) << 5
@@ -98,10 +88,6 @@ def choose_divider(f_out):
     elif f_out < 1500e6: return 0b010
     elif f_out < 3000e6: return 0b001
     else: return 0b000
-
-# ============================
-# FONCTION PRINCIPALE
-# ============================
 
 def generate_spi_registers(f_out_hz, int_n=False):
     f_ref = CONFIG["f_ref_hz"]
@@ -131,10 +117,6 @@ def generate_spi_registers(f_out_hz, int_n=False):
     ]
 
     return [reg_to_hex(r) for r in regs]
-
-# ============================
-# TEST
-# ============================
 
 if __name__ == "__main__":
     f_out_mhz = 5904.1

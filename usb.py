@@ -2,16 +2,8 @@ import hid
 import time
 import textwrap
 
-# -------------------------
-# Configuration de l'appareil
-# -------------------------
-VENDOR_ID = 0x04d8  # Remplacer par VID réel
-PRODUCT_ID = 0xf3b5  # Remplacer par PID réel
-
-# -------------------------
-# Trame copiée depuis Wireshark (Ctrl+C depuis "Copy as Hex Stream")
-# -------------------------
-# Exemple de trame de 128 octets (copier-coller ici directement)
+VENDOR_ID = 0x04d8
+PRODUCT_ID = 0xf3b5
 
 WIRESHARK_HEX_STREAM = """
 19 03 04 05 06 07 08 ff 00 00 00 00 00 00 32 00
@@ -20,9 +12,6 @@ WIRESHARK_HEX_STREAM = """
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 """
 
-# -------------------------
-# Fonction pour nettoyer et convertir la trame
-# -------------------------
 def parse_hex_stream(hex_stream):
     cleaned = hex_stream.replace('\n', ' ').replace('\r', '').strip()
     try:
@@ -33,9 +22,6 @@ def parse_hex_stream(hex_stream):
         raise ValueError(f"Longueur de trame invalide : {len(data)} octets (attendu : 128)")
     return data
 
-# -------------------------
-# Fonction principale
-# -------------------------
 def main():
     try:
         trame = parse_hex_stream(WIRESHARK_HEX_STREAM)
@@ -58,8 +44,5 @@ def main():
     except Exception as e:
         print("[Erreur] :", e)
 
-# -------------------------
-# Lancer le programme
-# -------------------------
 if __name__ == "__main__":
     main()
