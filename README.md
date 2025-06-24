@@ -1,5 +1,9 @@
 # 🔬 USB Hacking – Aaronia BPSG 6 Signal Generator
 
+# Projet Ultra Complet
+
+Bienvenue sur le projet ultra complet, conçu pour tester toutes les fonctionnalités de l'import automatique de portfolio.
+
 <!--portfolio
 {
   "id": "ultracomplet",
@@ -7,7 +11,7 @@
   "date": "2024-07-01",
   "images": [
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",.re
+    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
     "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png"
   ],
@@ -30,8 +34,8 @@
   "img_caption3_en": "Third image, results visualization.",
   "img_caption4_fr": "Quatrième image, schéma SVG du système.",
   "img_caption4_en": "Fourth image, SVG diagram of the system.",
-  "long_text_fr": "Voici un très long texte en français. ",
-  "long_text_en": "Here is a very long text in English. ",
+  "long_text_fr": "Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Voici un très long texte en français. Fin du texte.",
+  "long_text_en": "Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. Here is a very long text in English. End of text.",
   "sections": [
     {
       "type": "text",
@@ -68,7 +72,7 @@
       "value": [
         "Voici une section supplémentaire pour tester l'empilement de textes.",
         "On peut ajouter plusieurs paragraphes ici.",
-        "Liste des fonctionnalités :",
+        "Liste des fonctionnalités :",
         "- Import automatique",
         "- Gestion multilingue",
         "- Téléchargement d'images",
@@ -114,12 +118,13 @@
     {
       "type": "text",
       "value": [
-        "Encore un peu de texte pour tester la longueur du contenu. "
+        "Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. Encore un peu de texte pour tester la longueur du contenu. "
       ]
     }
   ]
 }
 -->
+
 
 <p align="center">
   <img src="docs/img/generator_aaronia.png" alt="Aaronia BPSG 6" />
