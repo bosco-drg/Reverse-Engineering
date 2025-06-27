@@ -1,141 +1,97 @@
-# 🔬 USB Hacking – Aaronia BPSG 6 Signal Generator
-
-<!--portfolio
-{
-  "id": "ultracomplet",
-  "repo": "https://github.com/bosco-drg/ultra-complet",
-  "date": "2024-07-01",
-  "images": [
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-    "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png"
-  ],
-  "tags": [
-    "python", "iot", "hardware", "web", "ai", "robotics", "opensource", "cloud", "devops", "security"
-  ],
-  "title_fr": "Projet Ultra Complet",
-  "title_en": "Ultra Complete Project",
-  "short_desc_fr": "Un projet de test exhaustif pour explorer toutes les possibilités du script d'import.",
-  "short_desc_en": "An exhaustive test project to explore all import script possibilities.",
-  "desc_fr": "Ce projet ultra complet démontre l'intégration de toutes les fonctionnalités prévues pour le portfolio automatisé. Il inclut des images, des sections variées, des liens, des listes, du code, des tableaux, et des captions multilingues. Il permet de valider la robustesse du script sur de grands volumes de données et de textes.",
-  "desc_en": "This ultra complete project demonstrates the integration of all features planned for the automated portfolio. It includes images, various sections, links, lists, code, tables, and multilingual captions. It validates the script's robustness on large volumes of data and text.",
-  "sections": [
-    {
-      "type": "text",
-      "value": [
-        "project_ultracomplet_desc",
-        "project_ultracomplet_long_text"
-      ]
-    },
-    {
-      "type": "image",
-      "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-      "caption_i18n": "project_ultracomplet_img_caption1"
-    },
-    {
-      "type": "image",
-      "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-      "caption_i18n": "project_ultracomplet_img_caption2"
-    },
-    {
-      "type": "image",
-      "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-      "caption_i18n": "project_ultracomplet_img_caption3"
-    },
-    {
-      "type": "image",
-      "src": "https://raw.githubusercontent.com/bosco-drg/Reverse-Engineering/main/docs/img/generator_aaronia.png",
-      "caption_i18n": "project_ultracomplet_img_caption4"
-    },
-    {
-      "type": "hr"
-    },
-    {
-      "type": "text",
-      "value": [
-        "project_ultracomplet_features_intro",
-        "project_ultracomplet_features_list"
-      ]
-    },
-    {
-      "type": "list",
-      "items": [
-        "project_ultracomplet_list_item1",
-        "project_ultracomplet_list_item2",
-        "project_ultracomplet_list_item3"
-      ]
-    },
-    {
-      "type": "table",
-      "headers": [
-        "project_ultracomplet_table_header1",
-        "project_ultracomplet_table_header2"
-      ],
-      "rows": [
-        [
-          "project_ultracomplet_table_row1col1",
-          "project_ultracomplet_table_row1col2"
-        ],
-        [
-          "project_ultracomplet_table_row2col1",
-          "project_ultracomplet_table_row2col2"
-        ],
-        [
-          "project_ultracomplet_table_row3col1",
-          "project_ultracomplet_table_row3col2"
-        ],
-        [
-          "project_ultracomplet_table_row4col1",
-          "project_ultracomplet_table_row4col2"
-        ]
-      ]
-    },
-    {
-      "type": "link",
-      "href": "https://github.com/bosco-drg/ultra-complet",
-      "caption_i18n": "project_ultracomplet_link_caption",
-      "target": "_blank"
-    },
-    {
-      "type": "hr"
-    },
-    {
-      "type": "text",
-      "value": [
-        "project_ultracomplet_long_text2"
-      ]
-    }
-  ]
-}
--->
-
-
+# 🔬 USB Hacking – Reverse Engineering du Générateur de Signaux Aaronia BPSG 6
 
 <p align="center">
-  <img src="docs/img/generator_aaronia.png" alt="Aaronia BPSG 6" />
+  <img src="docs/img/generator_aaronia.png" alt="Aaronia BPSG 6" width="400"/>
 </p>
 
-Ce projet vise à rétroconcevoir le protocole de communication USB utilisé par le générateur de signaux RF Aaronia BPSG 6. Le fabricant ne fournit aucune documentation API, et le logiciel officiel n'est disponible que pour les plateformes x86 avec une interface graphique, ce qui le rend inutilisable sur des systèmes sans écran comme le Raspberry Pi.  
-Notre objectif est de créer un outil open-source en ligne de commande (Python) pour contrôler les fonctions de base du générateur (fréquence, puissance de sortie) via USB, le rendant ainsi accessible pour des applications embarquées ou à distance.
+## 📖 Introduction
+
+Ce projet vise à rétroconcevoir le protocole de communication USB du générateur de signaux RF **Aaronia BPSG 6**, un appareil professionnel couvrant la plage 23.5 MHz - 6 GHz. Le fabricant ne fournit aucune documentation API, et son logiciel propriétaire est limité aux plateformes x86 avec interface graphique, le rendant inutilisable sur des systèmes embarqués comme le Raspberry Pi.
+
+Notre solution open-source permet un contrôle complet via USB en Python, notamment :
+- Réglage précis de la fréquence (mode Integer-N et Fractional-N)
+- Configuration de la puissance de sortie
+- Pilotage sans interface graphique (SSH, scripts automatisés)
+
+## 🛠️ Méthodologie de Reverse Engineering
+
+### 1. Identification du Périphérique USB
+- **Outils** : `lsusb`, `dmesg`, `usbmon`
+- **Identifiants** :
+  - Vendor ID: `0x04d8`
+  - Product ID: `0xf3b5`
+- **Type** : Appareil HID (Human Interface Device), permettant une compatibilité native sans drivers spécifiques.
+
+### 2. Capture et Analyse des Trames USB
+- **Outils** : Wireshark avec filtres ciblés (`usb.bus_id == 1 && usb.device.address == 10`)
+- **Structure des Trames** :
+  ```plaintext
+  [En-tête 12 octets] | [Registres SPI (24 octets)] | [Commande Gain (5 octets)] | [Padding]
+  ```
+  - **En-tête** : Constante pour un modèle donné (ex: `19 03 04 05 06 07 08 ff 00 00 00 00`)
+  - **Registres SPI** : Configuration de la PLL MAX2870 (6 registres de 4 octets en little-endian)
+  - **Commande Gain** : Octets modifiés lors du réglage de puissance (encodage non documenté)
+
+### 3. Décodage de la PLL MAX2870
+La fréquence est générée par une boucle à verrouillage de phase (PLL) **MAX2870**, configurée via 6 registres :
+- **Registre 0** : Mode (Integer/Fractional-N), valeurs N et F
+- **Registre 1** : Paramètres du Charge Pump et modulus (M)
+- **Registre 4** : Diviseur de sortie (DIVA) et puissance RF
+
+Exemple de calcul pour 2 GHz :
+```python
+f_out = 2000e6  # 2 GHz
+registers = generate_spi_registers(f_out, int_n=False)
+# Output: ['80003200', '42E80019', 'C0400C93', '00000013', '630000E4', '00040000']
+```
+
+## 💻 Fonctionnalités Implémentées
+
+### Pilotage de la Fréquence
+- Prise en charge des modes **Integer-N** (stabilité) et **Fractional-N** (précision)
+- Calcul automatique des paramètres PLL (N, F, DIVA) via `generate_spi_registers()`
+- Plage couverte : 23.5 MHz - 6 GHz avec résolution <1 Hz
+
+### Contrôle du Gain (Partiel)
+- Encodage partiellement reverse-engineeré (valeurs empiriques)
+- 4 niveaux de gain disponibles (0-3)
+
+### Exemple d'Utilisation
+```bash
+# Générer un signal à 1.5 GHz avec gain maximal
+python send_trame_usb.py 1500 3
+```
+
+## 📂 Structure du Projet
+```
+.
+├── generate_spi.py          # Génération des registres PLL
+├── send_trame_usb.py       # Construction des trames USB
+├── usb.py                  # Communication HID avec l'appareil
+├── docs/                   # Captures d'écran et schémas
+└── README.md               # Ce document
+```
+
+## 🔍 Résultats et Perspectives
+### ✅ Succès
+- Contrôle complet de la fréquence via USB
+- Compatibilité avec Linux/ARM (Raspberry Pi)
+- Solution légère (<100 lignes de code Python)
+
+### 🔴 Limitations
+- Encodage du gain non entièrement décrypté
+- Manque de calibration précise pour la puissance de sortie
+
+### 🚀 Améliorations Futures
+- Décodage complet du contrôle de gain par analyse statistique
+- Interface Web/REST pour un contrôle distant
+- Intégration avec GNU Radio pour des applications SDR
+
+## 📝 Licence
+Ce projet est à but éducatif et n'est pas affilié à Aaronia AG. Code publié sous licence MIT.
 
 ---
 
-## 🚀 Objectifs
-
-- Comprendre le protocole USB utilisé par le BPSG 6
-- Capturer et analyser les paquets USB du logiciel propriétaire
-- Développer une interface Python multiplateforme pour piloter le générateur
-- Permettre l'utilisation sur des systèmes headless ou ARM (ex : Raspberry Pi)
-
-## 🔧 Outils utilisés
-
-- `Wireshark`
-- `usbmon`
-- `PyUSB`
-- `lsusb`
-- `dmesg`
-
----
-
-> Ce projet est à but éducatif et n'est pas affilié à Aaronia AG.
+<p align="center">
+  <em>Projet réalisé par Bosco de Rauglaudre & Yanis Bouzidi - BUT GEII 2024/2025</em>
+</p>
