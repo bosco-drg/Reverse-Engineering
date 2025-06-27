@@ -10,7 +10,11 @@ def construire_trame(f_mhz, gain):
     regs_hex = generate_spi_registers(f_out_hz=f_mhz * 1e6, int_n=False)
     regs = b''.join(registre_to_le_bytes(r) for r in regs_hex)
 
-    cmd_gain = struct.pack('<B', gain) + b'\x00' * 4
+    # cmd_gain = struct.pack('<B', gain) + b'\x00' * 4
+    # TODO: The relationship between the gain parameter and the end of the USB frame is still under investigation.
+    # See README for details. The gain field is currently not functional.
+
+    cmd_gain = b''  # Placeholder: gain control not implemented
 
     total = len(entete) + len(regs) + len(cmd_gain)
     if total > 64:
